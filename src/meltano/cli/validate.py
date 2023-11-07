@@ -31,7 +31,7 @@ logger = structlog.getLogger(__name__)
 TEST_LINE_LENGTH = 60
 
 
-def write_sep_line(title: str, sepchar: str, **kwargs):
+def write_sep_line(title: str, sepchar: str, **kwargs: t.Any) -> None:
     """Write a separator line in the terminal."""
     terminal_width, _ = shutil.get_terminal_size()
     char_count = (
@@ -88,8 +88,8 @@ class CommandLineRunner(ValidationsRunner):
 def test(
     project: Project,
     all_tests: bool,
-    plugin_tests: tuple[str] = (),
-):
+    plugin_tests: tuple[str, ...] = (),
+) -> None:
     """
     Run validations using plugins' tests.
 

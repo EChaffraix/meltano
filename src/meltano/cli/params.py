@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import functools
+import typing as t
 
 import click
 
@@ -12,7 +13,7 @@ from meltano.core.migration_service import MigrationError
 from meltano.core.project_settings_service import ProjectSettingsService
 
 
-def database_uri_option(func):
+def database_uri_option(func: t.Callable) -> t.Callable:
     """Database URI Click option decorator.
 
     args:
@@ -20,7 +21,11 @@ def database_uri_option(func):
     """
 
     @click.option("--database-uri", help="System database URI.")
-    def decorate(*args, database_uri=None, **kwargs):
+    def decorate(
+        *args,
+        database_uri: str | None = None,
+        **kwargs: t.Any,
+    ) -> t.Callable:
         if database_uri:
             ProjectSettingsService.config_override["database_uri"] = database_uri
 
@@ -34,7 +39,7 @@ class pass_project:  # noqa: N801
 
     __name__ = "project"
 
-    def __init__(self, migrate=False):
+    def __init__(self, migrate: bool = False) -> None:
         """Instantiate decorator.
 
         args:
@@ -42,7 +47,7 @@ class pass_project:  # noqa: N801
         """
         self.migrate = migrate
 
-    def __call__(self, func):
+    def __call__(self, func: t.Callable) -> t.Callable:
         """Return decorated function.
 
         args:
