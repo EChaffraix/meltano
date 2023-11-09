@@ -3229,6 +3229,51 @@ typing-extensions = {version = ">=4.0.0,<5.0", markers = "python_version < \"3.9
 jupyter = ["ipywidgets (>=7.5.1,<9)"]
 
 [[package]]
+name = "rocksdict"
+version = "0.3.17"
+description = "Rocksdb Python Binding"
+optional = true
+python-versions = "*"
+files = [
+    {file = "rocksdict-0.3.17-cp310-cp310-macosx_10_14_x86_64.macosx_11_0_arm64.macosx_10_14_universal2.whl", hash = "sha256:81f7f28f119af1e0701964097ec86f7322d49db68bb4ce43e9353381143daf68"},
+    {file = "rocksdict-0.3.17-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:3c7afeb46eafa06bd49d185431123709a16929fc8121c1c17a62445e3421d009"},
+    {file = "rocksdict-0.3.17-cp310-cp310-manylinux_2_28_aarch64.whl", hash = "sha256:582310b74a9e12d437d15c5515153d4a87649ea0ed99dba7c577d1b22697e3b5"},
+    {file = "rocksdict-0.3.17-cp310-cp310-manylinux_2_28_x86_64.whl", hash = "sha256:6696f38d4c5592e0bbcd69e143020c8f6633b421e0a136cf9fd625e702a6c8a5"},
+    {file = "rocksdict-0.3.17-cp310-none-win32.whl", hash = "sha256:533529082df7dadd1a1c64058ccdca45ace6469855aaf23997d4ccca1147e33a"},
+    {file = "rocksdict-0.3.17-cp310-none-win_amd64.whl", hash = "sha256:07267bdcd23a1b91e95752bae2afff2d331a587c61da43c9a5c77204c5271e30"},
+    {file = "rocksdict-0.3.17-cp311-cp311-macosx_10_14_x86_64.macosx_11_0_arm64.macosx_10_14_universal2.whl", hash = "sha256:e070d3eea69a9ec444ffc2b3af1d0db3cf66d976164ffb9b511d75bc91d4089d"},
+    {file = "rocksdict-0.3.17-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:ea9fd9ac70f1ea7f170cc414d7923552f3be83ffa88a063ca0b9083f57d5109c"},
+    {file = "rocksdict-0.3.17-cp311-cp311-manylinux_2_28_aarch64.whl", hash = "sha256:b8f340a4cefe8c8ecc752d80af23feadaff212713ef246180954b994a57aa4eb"},
+    {file = "rocksdict-0.3.17-cp311-cp311-manylinux_2_28_x86_64.whl", hash = "sha256:613ca17e2a7e4b7d83842243a5bb7eb97872f6d582bc2e9325f39d29e87b6275"},
+    {file = "rocksdict-0.3.17-cp311-none-win32.whl", hash = "sha256:1d615abf2e35b87079536bf1b3d11e162fc3df67cee3f0b14d2f0f04f7401019"},
+    {file = "rocksdict-0.3.17-cp311-none-win_amd64.whl", hash = "sha256:b834917487d403f2458330e95934888362a3817360cf866d77fb052bf58eba43"},
+    {file = "rocksdict-0.3.17-cp312-cp312-macosx_10_14_x86_64.macosx_11_0_arm64.macosx_10_14_universal2.whl", hash = "sha256:6b15d599950d76b5546eca16c643fdfd55ee983cd43509941bd0d27017632fd0"},
+    {file = "rocksdict-0.3.17-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:e1c2944c5db6b1ad93a4dfbbbace99dc71857f804bf2ba83b8abd806e3728145"},
+    {file = "rocksdict-0.3.17-cp312-cp312-manylinux_2_28_aarch64.whl", hash = "sha256:fe62158af7e6e8ad720ed082825126d8345cbc3a99a136bd4263f5dcec9ee54a"},
+    {file = "rocksdict-0.3.17-cp312-cp312-manylinux_2_28_x86_64.whl", hash = "sha256:8b69270b8cb4f06196f6b0494e641525689bbeec39ebdb18259954b2460a08c3"},
+    {file = "rocksdict-0.3.17-cp312-none-win32.whl", hash = "sha256:cf61e31ff18b7b25568305431a0d8b62bb4c330c1f2016031227c6f2f1caa3ba"},
+    {file = "rocksdict-0.3.17-cp312-none-win_amd64.whl", hash = "sha256:c694a1641750b40d5bd6f3cf5eced55595272f7ee29d9f8b28b9af33372ad808"},
+    {file = "rocksdict-0.3.17-cp37-cp37m-macosx_10_14_x86_64.macosx_11_0_arm64.macosx_10_14_universal2.whl", hash = "sha256:51d460f776fe6e622fe32dac02a22964fcac4bbba71f539b013e661d904128c1"},
+    {file = "rocksdict-0.3.17-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:99e50a50733e9962774c154eedc7e3f94a9837e1cc708aa2efddab712a5b3e4d"},
+    {file = "rocksdict-0.3.17-cp37-cp37m-manylinux_2_28_aarch64.whl", hash = "sha256:51592c32929bb81b0eb044dbe1cbd158ae612f717d7042b1cc8fcfd5aab5c0a6"},
+    {file = "rocksdict-0.3.17-cp37-cp37m-manylinux_2_28_x86_64.whl", hash = "sha256:f64e32dd4b043dca3e623568690e1ff8abc7f22ed191ba67987a4ddc3e7895d3"},
+    {file = "rocksdict-0.3.17-cp37-none-win32.whl", hash = "sha256:ddcfba1cf9f7fd23bc6760e88572ca59af39ec11e989615dea43d4279be9c2f1"},
+    {file = "rocksdict-0.3.17-cp37-none-win_amd64.whl", hash = "sha256:69be441d4fe1d1642d9ad7e2f263460a7403bf1749cc1930a084c5f6a7cee97b"},
+    {file = "rocksdict-0.3.17-cp38-cp38-macosx_10_14_x86_64.macosx_11_0_arm64.macosx_10_14_universal2.whl", hash = "sha256:059612cb76122bbde3044eb57c1bbb409b716842fbd8af85c9e8b7e65087feb8"},
+    {file = "rocksdict-0.3.17-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:b5aeae38eb460f1722351b959f799e3e607ad2767058ccce5b4776b05e1b7d37"},
+    {file = "rocksdict-0.3.17-cp38-cp38-manylinux_2_28_aarch64.whl", hash = "sha256:ef7125ca7a8ba09a76358c121a053031f30f5d7c1f7ddc3e94a1e9442e9c9a99"},
+    {file = "rocksdict-0.3.17-cp38-cp38-manylinux_2_28_x86_64.whl", hash = "sha256:c7066166f811a45d33925534a17a78da568198b928769d4e76c502fb07161f82"},
+    {file = "rocksdict-0.3.17-cp38-none-win32.whl", hash = "sha256:6d9cd112a91bcd7c63d81c5c5c9dfa9711cfadab34a0fd9d8262384e716a2d62"},
+    {file = "rocksdict-0.3.17-cp38-none-win_amd64.whl", hash = "sha256:e0278ffdb45ad460d9666026ed307733acb62fcadbe118db487e6494cf8f34a2"},
+    {file = "rocksdict-0.3.17-cp39-cp39-macosx_10_14_x86_64.macosx_11_0_arm64.macosx_10_14_universal2.whl", hash = "sha256:273d4c81c063993ab9f7d63c414b1391b9c5a09d67f574319964dde9f0b31e08"},
+    {file = "rocksdict-0.3.17-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:bc864d80e9c8464d16586bcd1bf23225c1d7c45310683e5e8e59014f2531de61"},
+    {file = "rocksdict-0.3.17-cp39-cp39-manylinux_2_28_aarch64.whl", hash = "sha256:864ab74365a23de26fdd271338ab5d2642aeefba6693ae30f5fb6ddb764682f2"},
+    {file = "rocksdict-0.3.17-cp39-cp39-manylinux_2_28_x86_64.whl", hash = "sha256:df1ece423ba94bfd3177b60bc55333a1ca8b1fc9b38fe96bfe0147ffa631f138"},
+    {file = "rocksdict-0.3.17-cp39-none-win32.whl", hash = "sha256:43ebebcd36203388b94e2baaed0857836f219ea9aecbde713b5c02e42693d72a"},
+    {file = "rocksdict-0.3.17-cp39-none-win_amd64.whl", hash = "sha256:08ab5e6f27b5a3c413ae6348a9952c3ee42e8be014fef797c6d372f891c1bbab"},
+]
+
+[[package]]
 name = "rpds-py"
 version = "0.10.4"
 description = "Python bindings to Rust's persistent data structures (rpds)"
@@ -4135,9 +4180,10 @@ gcs = ["google-cloud-storage"]
 mssql = ["pymssql"]
 postgres = ["psycopg"]
 psycopg2 = ["psycopg2-binary"]
+rocksdb = ["rocksdict"]
 s3 = ["boto3"]
 
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.8,<3.13"
-content-hash = "051c36e900a2623cecc09e39594b1ae165d78bb076ecdabf62dcb1acf5d9087c"
+content-hash = "2fc849f1f90d5a9200f0d0996594586db0a6482668d6b79d3fe0f5d0a7bb791b"

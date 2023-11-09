@@ -73,6 +73,7 @@ python-slugify = "^8.0.1"
 python-ulid = "^1.1.0"
 pyyaml = "^6.0.1"
 questionary = "^2.0.1"
+rocksdict = {version = "^0.3.15", optional = true}
 requests = "^2.31.0"
 rich = "^13.6.0"
 "ruamel.yaml" = "^0.17.21"
@@ -95,6 +96,7 @@ gcs = ["google-cloud-storage"]
 mssql = ["pymssql"]
 postgres = ["psycopg"]
 psycopg2 = ["psycopg2-binary"]
+rocksdb = ["rocksdict"]
 s3 = ["boto3"]
 
 [tool.poetry.group.dev.dependencies]

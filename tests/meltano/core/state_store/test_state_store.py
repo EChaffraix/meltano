@@ -17,6 +17,7 @@ from meltano.core.state_store import (
     DBStateStoreManager,
     GCSStateStoreManager,
     LocalFilesystemStateStoreManager,
+    RocksDBStateStoreManager,
     S3StateStoreManager,
     StateBackend,
     state_store_manager_from_project_settings,
@@ -163,3 +164,19 @@ class TestS3StateBackend:
             s3_state_store_direct_creds.aws_secret_access_key
             == "a_different_key"  # noqa: S105
         )
+
+
+class TestRocksDBStateBackend:
+    @pytest.fixture()
+    def state_path(self, tmp_path: Path):
+        path = tmp_path / ".meltano" / "state"
+        try:
+            yield str(path)
+        finally:
+            shutil.rmtree(path)
+
+    def test_manager_from_settings(self, project: Project, state_path: str):
+        project.settings.set(["state_backend", "uri"], f"rocksdb://{state_path}")
+        state_store = state_store_manager_from_project_settings(project.settings)
+        assert isinstance(state_store, RocksDBStateStoreManager)
+        assert state_store.path == state_path

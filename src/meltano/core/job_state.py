@@ -99,6 +99,23 @@ class JobState(SystemModel):  # noqa: WPS214
         )
 
     @classmethod
+    def from_object(cls, state_id: str, obj: t.Any) -> JobState:
+        """Create JobState from object.
+
+        Args:
+            state_id: the state ID of the job to create JobState for.
+            obj: the object to use to create JobState.
+
+        Returns:
+            JobState representing args.
+        """
+        return cls(
+            state_id=state_id,
+            completed_state=obj.get("completed", {}),
+            partial_state=obj.get("partial", {}),
+        )
+
+    @classmethod
     def from_json(cls, state_id: str, json_str: str) -> JobState:
         """Create JobState from json representation.
 
@@ -110,11 +127,18 @@ class JobState(SystemModel):  # noqa: WPS214
             JobState representing args.
         """
         state_dict = json.loads(json_str)
-        return cls(
-            state_id=state_id,
-            completed_state=state_dict.get("completed", {}),
-            partial_state=state_dict.get("partial", {}),
-        )
+        return cls.from_object(state_id, state_dict)
+
+    def to_dict(self) -> dict:
+        """Get a dict representation of this JobState.
+
+        Returns:
+            A dict representation of this JobState.
+        """
+        return {
+            "completed": self.completed_state,
+            "partial": self.partial_state,
+        }
 
     def json(self) -> str:
         """Get the json representation of this JobState.
@@ -122,9 +146,7 @@ class JobState(SystemModel):  # noqa: WPS214
         Returns:
             json representation of this JobState
         """
-        return json.dumps(
-            {"completed": self.completed_state, "partial": self.partial_state},
-        )
+        return json.dumps(self.to_dict())
 
     def json_merged(self) -> str:
         """Return the json representation of partial state merged onto complete state.

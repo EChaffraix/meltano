@@ -98,7 +98,7 @@ def pytest_meltano(session: Session) -> None:
         session: Nox session.
     """
     backend_db = os.environ.get("PYTEST_BACKEND", "sqlite")
-    extras = ["azure", "gcs", "s3"]
+    extras = ["azure", "gcs", "rocksdb", "s3"]
 
     if backend_db == "mssql":
         extras.append("mssql")
